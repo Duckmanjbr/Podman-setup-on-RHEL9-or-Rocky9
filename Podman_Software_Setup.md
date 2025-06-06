@@ -6,7 +6,8 @@ Examples:
 * `mkdir /home/[user]/containers/[container-app]`
 
 ## Install baseline software:
-* `sudo dnf -y install podman container-tools cockpit-podman`
+* `sudo dnf -y install podman container-tools`
+* If running Cockpit: `sudo dnf -y install podman container-tools cockpit-podman`
 
    
 ## Setup Podman:
