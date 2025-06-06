@@ -197,4 +197,4 @@ For bridge connections, though generally more secure, try to mitigate where poss
   * Limit exposed ports to only those necessary for the application
   * Keep the host’s kernel and network stack updated to avoid vulnerabilities.
 
-## [Continue on to .container files and setup](/Quadlet_Containers.md)
+## [Continue on to .container files and their setup](/Quadlet_Containers.md)
