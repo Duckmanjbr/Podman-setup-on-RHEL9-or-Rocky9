@@ -7,7 +7,7 @@ Examples:
 
 ## Install baseline software:
 * `sudo dnf -y install podman container-tools`
-* If running Cockpit: `sudo dnf -y install podman container-tools cockpit-podman`
+* If also running Cockpit: `sudo dnf -y install podman container-tools cockpit-podman`
 
    
 ## Setup Podman:
