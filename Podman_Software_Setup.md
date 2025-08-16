@@ -6,16 +6,15 @@ Examples:
 * `mkdir /home/[user]/containers/[container-app]`
 
 ## Install baseline software:
-* `sudo dnf -y install podman container-tools`
-* If also running Cockpit: `sudo dnf -y install podman container-tools cockpit-podman`
+1. Install software: `sudo dnf -y install podman container-tools`
+2. If also running Cockpit: `sudo dnf -y install podman container-tools cockpit-podman`
 
    
 ## Setup Podman:
-Start AutoUpdate timer to check for latest images - `sudo systemctl enable --now podman-auto-update.timer`
-Test the AutoUpdate `sudo podman auto-update`
-
-1. `sudo systemctl enable --now podman.socket`
-2. `systemctl --user enable --now podman.socket`
+1. Start AutoUpdate timer to check for latest images:  `sudo systemctl enable --now podman-auto-update.timer`
+2. Test the AutoUpdate:  `sudo podman auto-update`
+3. Enable podman:  `sudo systemctl enable --now podman.socket`
+4. Enable user podman:  `systemctl --user enable --now podman.socket`
 
 ## Allow users NET_ADMIN capability if needed for direct network permissions:
 1. `sudo setcap cap_net_admin+eip /usr/libexec/podman/netavark`
