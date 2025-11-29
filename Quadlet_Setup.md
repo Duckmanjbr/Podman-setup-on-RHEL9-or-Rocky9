@@ -50,7 +50,8 @@ Rootless Podman is the prefered method of container execution.  For Quadlets the
 * `sudo journalctl -xe | grep -i quadlet`
 
 #### Running Quadlet processes individually:
-* Run the container and any sub-process (.volume, .network, etc) as root: `sudo systemctl start [app-name].service`
+* Run a pod and any sub-containers (.volume, .network, etc) as root: `sudo systemctl start [pod-name]-pod.service`
+* Run a container and any sub-process (.volume, .network, etc) as root: `sudo systemctl start [container-name].service`
 * Run the .volume quadlet as root: `sudo systemctl start [volume-file-name]-volume.service`
 * Run the .network quadlet as root: `sudo systemctl start [network-file-name]-network.service`
 * Run the container and any sub-process (.volume, .network, etc) as user: `systemctl --user start [app-name].service`
