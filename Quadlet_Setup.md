@@ -29,17 +29,17 @@
 ## Podman 
 Rootless Podman is the prefered method of container execution.  For Quadlets the .container file is the heart of the application so I'll cover that last.  Before we get to each application there are some other basics of understanding required. Each type of Quadlet file creates a systemd entry and therfore can be run as a seperate process.  This is good for testing out the configuration but there are other testing methods to consider using for testing as well.
 
-### Enable automatic updates for containers if needed.
+#### Save quadlet files in one of two locations:
+* Root access: `/etc/containers/systemd/`
+* Rootless access: `~/.config/containers/systemd/`
+
+#### Enable automatic updates for containers if needed.
 * Run as root: `sudo systemctl enable --now podman-auto-update.service`
 * Run as a user `systemctl --user enable --now podman-auto-update.service`
 
 #### After any quadlet file change reload systemd daemon to sync with systemd.
 * Run as root: `sudo systemctl daemon-reload`
 * Run as a user `systemctl --user daemon-reload`
-
-#### Save quadlet files in one of two locations:
-* Root access: `/etc/containers/systemd/`
-* Rootless access: `~/.config/containers/systemd/`
 
 #### Once created, test quadlet files using quadlet dryrun.  Any errors found will be listed at the end of the output explaining the issue.
 
