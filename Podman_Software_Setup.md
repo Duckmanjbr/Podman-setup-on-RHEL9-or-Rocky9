@@ -26,5 +26,14 @@ Examples:
 2. `sudo setcap cap_net_admin+eip /usr/bin/podman`
 
 
+## Allow lower unprivileged port use with Podman:
+1. Lower the kernel's unprivileged port threshold so rootless users can bind to ports like 80 and 443:
+  `echo 'net.ipv4.ip_unprivileged_port_start=80' | sudo tee /etc/sysctl.d/99-podman-privileged-ports.conf`
+2. Apply:
+   `sudo sysctl -p /etc/sysctl.d/99-podman-privileged-ports.conf`
+
+
+
+
 ### Setup Containers:
 [Container Quadlet_Setup](https://github.com/Duckmanjbr/Podman-setup-on-RHEL9-Rocky9/blob/main/Quadlet_Setup.md#podman-container-setup-on-rhel9rocky9-with-security-implications)
