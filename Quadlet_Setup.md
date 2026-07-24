@@ -122,7 +122,7 @@ Network files ([name].network) are the preferred Quadlet method of calling/creat
 
 `sudo podman network inspect [network-name]`
 
-#### Type 1 - Macvlan
+#### Type 1 - Macvlan (L2)
 Networks created with "macvlan" allow direct network connectivity bypassing the host IP stack.  Macvlan is riskier in environments where network segmentation is weak or where containers run untrusted workloads, as it exposes containers directly to the network. It’s better suited for scenarios where containers need to act like physical devices (e.g., IoT or network appliances) and where strong network-level controls (e.g., VLANs, firewall rules) are in place. It has the following disadvantages:
 
   1. Increased Network Exposure:
@@ -197,5 +197,11 @@ For bridge connections, though generally more secure, try to mitigate where poss
   * Use Podman’s network namespaces to isolate containers further
   * Limit exposed ports to only those necessary for the application
   * Keep the host’s kernel and network stack updated to avoid vulnerabilities.
+
+
+#### Type 3 - Lanvlan (L3)
+Very similar to Macvlan without the L2 aspects.  This will only populate a layer 3 IP address using the same MAC address of the host connected interface.
+
+
 
 ## [Continue on to .container files and their setup](/Quadlet_Containers.md)
